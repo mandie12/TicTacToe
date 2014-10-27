@@ -125,40 +125,74 @@ public class Gui extends JFrame implements ActionListener{
 
 		}
 
-
+		//first row horizontal
 		if(button1.getText()==button2.getText()&&button3.getText()==button2.getText()&&button1.getText()==button3.getText()
 				&&button1.getText().isEmpty()==false&&button2.getText().isEmpty()==false&&button3.getText().isEmpty()==false){
 
-			JOptionPane.showMessageDialog(this, "The winner is "+button1.getText());
-			System.out.println("winner Top row"+button1.getText());
+			showWinner(button1);
 		}
-
+		//second row horizontal
 		if(button4.getText()==button5.getText()&&button6.getText()==button5.getText()&&button4.getText()==button6.getText()
 				&&button4.getText().isEmpty()==false&&button5.getText().isEmpty()==false&&button6.getText().isEmpty()==false){
 
-			JOptionPane.showMessageDialog(this, "The winner is "+button4.getText());
-			System.out.println("winner middle row"+button4.getText());
-		}
-		if(button7.getText()==button8.getText()&&button9.getText()==button8.getText()&&button9.getText()==button7.getText()
-				&&button1.getText().isEmpty()==false&&button2.getText().isEmpty()==false&&button3.getText().isEmpty()==false){
-
-			JOptionPane.showMessageDialog(this, "The winner is "+button7.getText());
-			System.out.println("winner"+button7.getText());
-		}
 		
-		if(button1.getText()==button4.getText()&&button7.getText()==button4.getText()&&button1.getText()==button4.getText()
+			showWinner(button4);
+		}
+		//third row horizontal
+		if(button7.getText()==button8.getText()&&button9.getText()==button8.getText()&&button9.getText()==button7.getText()
+			&&button7.getText().isEmpty()==false&&button8.getText().isEmpty()==false&&button9.getText().isEmpty()==false){
+			
+			showWinner(button7);
+		}
+		//column 1 vertical
+		if(button1.getText()==button4.getText()&&button7.getText()==button4.getText()&&button1.getText()==button7.getText()
 				&&button1.getText().isEmpty()==false&&button4.getText().isEmpty()==false&&button7.getText().isEmpty()==false){
 
-			JOptionPane.showMessageDialog(this, "The winner is "+button7.getText());
-			System.out.println("winner"+button7.getText());
+			showWinner(button7);
 		}
+		//column 2 vertical
+				if(button2.getText()==button5.getText()&&button8.getText()==button5.getText()&&button2.getText()==button8.getText()
+						&&button2.getText().isEmpty()==false&&button5.getText().isEmpty()==false&&button8.getText().isEmpty()==false){
 
+					
+					showWinner(button2);
+				}
+		//column 3 vertical
+				if(button3.getText()==button6.getText()&&button9.getText()==button6.getText()&&button3.getText()==button9.getText()
+						&&button3.getText().isEmpty()==false&&button6.getText().isEmpty()==false&&button9.getText().isEmpty()==false){
+
+					showWinner(button9);
+				}
+		//diagonal from top left corner to right corner
+				if(button1.getText()==button5.getText()&&button9.getText()==button5.getText()&&button1.getText()==button9.getText()
+						&&button1.getText().isEmpty()==false&&button5.getText().isEmpty()==false&&button9.getText().isEmpty()==false){
+					
+					showWinner(button9);
+				}
+		//diagonal from top right corner to left corner
+				if(button3.getText()==button5.getText()&&button7.getText()==button3.getText()&&button7.getText()==button5.getText()
+						&&button3.getText().isEmpty()==false&&button5.getText().isEmpty()==false&&button7.getText().isEmpty()==false){
+
+					
+					showWinner(button3);
+				}
 	} 
 
 
 
 
-
+	public void showWinner(JButton winnersLetter){
+		//JOptionPane.showMessageDialog(this, "The winner is "+winnersLetter.getText());
+		
+//		final JOptionPane optionPane = new JOptionPane(
+//			    "The only way to close this dialog is by\n"
+//			    + "pressing one of the following buttons.\n"
+//			    + "Do you understand?",
+//			    JOptionPane.QUESTION_MESSAGE,
+//			    JOptionPane.YES_NO_OPTION);
+//		this.show(optionPane);
+		//System.out.println("winner"+winnersLetter.getText());
+	}
 
 	public int getCount() {
 		return count;
